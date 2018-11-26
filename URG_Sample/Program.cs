@@ -54,7 +54,7 @@ namespace URG_Sample {
         static void Main() {
 
             using (hokuyo = new Hokuyo(hokuyoComPort, hokuyoBaudRate))
-            using (Timer tmr = new Timer { Interval = 100 }) {
+            using (Timer tmr = new Timer { Interval = 110 }) {
                 tmr.Elapsed += Tmr_Elapsed;  // 使用事件代替委託
                 tmr.Start();          // 開啟定時器
                 Console.ReadLine();
@@ -91,9 +91,39 @@ namespace URG_Sample {
         }
 
 
+        /// <summary>
+        /// 使用弧度與距離取得座標
+        /// </summary>
+        /// <param name="degree"></param>
+        /// <param name="distance"></param>
+        /// <returns></returns>
+        public static (double x, double y) GetPoint(double degree, double distance) {
+            return (
+                 Math.Cos(degree) * distance,
+                 Math.Sin(degree) * distance
+            );
+        }
+
         [STAThread]
         static void Tmr_Elapsed(object sender, EventArgs e) {
+            try {
+                var rawDistanceValues = hokuyo.GetData();
+                var rawPoints = rawDistanceValues
+                        .Skip(128 - 44).Take(384 - 128)
+                        .Select((x, i) => new {
+                            degree = i * ((Math.PI / 2) / (384 - 128)),
+                            distance = x
+                        })
+                        .Select(x => GetPoint(x.degree, x.distance))
+                        .Where(x => true);
 
+                var currentPoint = (
+                    x: rawPoints.Sum(x => x.x) / rawPoints.Count(),
+                    y: rawPoints.Sum(x => x.y) / rawPoints.Count()
+                );
+            } catch {
+
+            }
             try {
                 var distanceValuesFromHokuyo = hokuyo.GetData();
 
@@ -158,8 +188,8 @@ namespace URG_Sample {
                     SetCursorPos(p.x, p.y);
                     GetCursorPos(ref p);
 
-                    mouse_event(MOUSEEVENTF_LEFTDOWN, p.x, p.y, 0, 0);
-                    mouse_event(MOUSEEVENTF_LEFTUP, p.x, p.y, 0, 0);
+                    //mouse_event(MOUSEEVENTF_LEFTDOWN, p.x, p.y, 0, 0);
+                    //mouse_event(MOUSEEVENTF_LEFTUP, p.x, p.y, 0, 0);
 
                     Console.WriteLine($"after x: {p.x}, y: {p.y}");
 

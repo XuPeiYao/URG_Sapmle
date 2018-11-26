@@ -6,13 +6,13 @@ namespace URG.Library {
     /// <summary>
     /// Supports the Hokuyo sensor.
     /// </summary>
-    public class Hokuyo: IDisposable {
+    public class Hokuyo : IDisposable {
         private bool _disposed;
         public void Dispose() {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-        
+
         protected virtual void Dispose(bool disposing) {
             if (_disposed) return;
             if (disposing) {
@@ -97,16 +97,23 @@ namespace URG.Library {
             }
         }
 
+        public double GetRadian(int index) {
+            return hokuyo.Index2Radian(index);
+        }
+
         public long[] GetCoordinate(int[] data, int index) {
             var l = data[index];
             var radian = hokuyo.Index2Radian(index);
-            
+
+            var k = hokuyo.Index2Radian(44);
+
+
             var x = (long)(l * -Math.Sin(radian));
             var y = (long)(l * Math.Cos(radian));
 
             return new long[] { x, y };
         }
-        
-        
+
+
     }
 }
