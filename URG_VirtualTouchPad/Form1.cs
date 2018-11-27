@@ -219,7 +219,7 @@ namespace URG_VirtualTouchPad {
                 offsetY = offsetY_Control.Value;
             });
 
-            return (x: (int)(Math.Abs((point.x - decimal.ToDouble(MinX.Value)) * dX - offsetX)),
+            return (x: (int)(Math.Abs((point.x - decimal.ToDouble(MinX.Value)) * dX + offsetX)),
                 y: screenHeight - (int)(Math.Abs((point.y - decimal.ToDouble(MinY.Value)) * dY - offsetY)));
         }
 
