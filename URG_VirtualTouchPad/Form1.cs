@@ -179,7 +179,7 @@ namespace URG_VirtualTouchPad {
                 foreach (var po in ManObj.Properties) {
                     d += po.Name + ":" + po.Value + "\r\n";
                 }
-                if (ManObj["PNPDeviceID"].ToString() == @"USB\VID_15D1&PID_0000\6&381056B7&0&8") {
+                if (ManObj["PNPDeviceID"].ToString().StartsWith(@"USB\VID_15D1&PID_0000")) {
                     return (int.Parse(ManObj["DeviceID"].ToString().Substring(3)),
                         int.Parse((ManObj["MaxBaudRate"] ?? "115200").ToString()));
                 }
