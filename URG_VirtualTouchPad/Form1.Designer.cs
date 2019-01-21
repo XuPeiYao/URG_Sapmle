@@ -24,6 +24,8 @@
         /// </summary>
         private void InitializeComponent() {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BufferCount = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
             this.StartButton = new System.Windows.Forms.Button();
             this.MaxX = new System.Windows.Forms.NumericUpDown();
             this.MinX = new System.Windows.Forms.NumericUpDown();
@@ -38,28 +40,6 @@
             this.Log = new System.Windows.Forms.TextBox();
             this.BindMouseButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.OffsetY_Label = new System.Windows.Forms.Label();
-            this.OffsetX_Label = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.offsetY_Control = new System.Windows.Forms.TrackBar();
-            this.offsetX_Control = new System.Windows.Forms.TrackBar();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.BufferCount = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.OffsetY2_Label = new System.Windows.Forms.Label();
-            this.OffsetX2_Label = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.offsetY2_Control = new System.Windows.Forms.TrackBar();
-            this.offsetX2_Control = new System.Windows.Forms.TrackBar();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.OffsetY3_Label = new System.Windows.Forms.Label();
             this.OffsetX3_Label = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -70,20 +50,43 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.OffsetY2_Label = new System.Windows.Forms.Label();
+            this.OffsetX2_Label = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.offsetY2_Control = new System.Windows.Forms.TrackBar();
+            this.offsetX2_Control = new System.Windows.Forms.TrackBar();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.OffsetY_Label = new System.Windows.Forms.Label();
+            this.OffsetX_Label = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.offsetY_Control = new System.Windows.Forms.TrackBar();
+            this.offsetX_Control = new System.Windows.Forms.TrackBar();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BufferCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxY)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.offsetY_Control)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.offsetX_Control)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BufferCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.offsetY2_Control)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.offsetX2_Control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetY3_Control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetX3_Control)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offsetY2_Control)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offsetX2_Control)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offsetY_Control)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offsetX_Control)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -105,6 +108,38 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "環境設定";
+            // 
+            // BufferCount
+            // 
+            this.BufferCount.Location = new System.Drawing.Point(124, 132);
+            this.BufferCount.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.BufferCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.BufferCount.Name = "BufferCount";
+            this.BufferCount.Size = new System.Drawing.Size(120, 22);
+            this.BufferCount.TabIndex = 15;
+            this.BufferCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.BufferCount.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 134);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 12);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "數據緩衝次數:";
             // 
             // StartButton
             // 
@@ -321,13 +356,203 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.shapeContainer1);
             this.groupBox3.Enabled = false;
             this.groupBox3.Location = new System.Drawing.Point(373, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(445, 468);
+            this.groupBox3.Size = new System.Drawing.Size(445, 620);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "誤差校正";
+            // 
+            // OffsetY3_Label
+            // 
+            this.OffsetY3_Label.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OffsetY3_Label.Location = new System.Drawing.Point(176, 408);
+            this.OffsetY3_Label.Name = "OffsetY3_Label";
+            this.OffsetY3_Label.Size = new System.Drawing.Size(100, 32);
+            this.OffsetY3_Label.TabIndex = 29;
+            this.OffsetY3_Label.Text = "0px";
+            this.OffsetY3_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // OffsetX3_Label
+            // 
+            this.OffsetX3_Label.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OffsetX3_Label.Location = new System.Drawing.Point(176, 334);
+            this.OffsetX3_Label.Name = "OffsetX3_Label";
+            this.OffsetX3_Label.Size = new System.Drawing.Size(100, 32);
+            this.OffsetX3_Label.TabIndex = 28;
+            this.OffsetX3_Label.Text = "0px";
+            this.OffsetX3_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(422, 428);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(17, 12);
+            this.label22.TabIndex = 27;
+            this.label22.Text = "下";
+            // 
+            // offsetY3_Control
+            // 
+            this.offsetY3_Control.Location = new System.Drawing.Point(10, 443);
+            this.offsetY3_Control.Maximum = 1000;
+            this.offsetY3_Control.Minimum = -1000;
+            this.offsetY3_Control.Name = "offsetY3_Control";
+            this.offsetY3_Control.Size = new System.Drawing.Size(431, 45);
+            this.offsetY3_Control.TabIndex = 22;
+            this.offsetY3_Control.Scroll += new System.EventHandler(this.offsetY3_Control_Scroll);
+            // 
+            // offsetX3_Control
+            // 
+            this.offsetX3_Control.Location = new System.Drawing.Point(8, 368);
+            this.offsetX3_Control.Maximum = 1000;
+            this.offsetX3_Control.Minimum = -1000;
+            this.offsetX3_Control.Name = "offsetX3_Control";
+            this.offsetX3_Control.Size = new System.Drawing.Size(431, 45);
+            this.offsetX3_Control.TabIndex = 20;
+            this.offsetX3_Control.Scroll += new System.EventHandler(this.offsetX3_Control_Scroll);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(8, 428);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(17, 12);
+            this.label23.TabIndex = 26;
+            this.label23.Text = "上";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(422, 338);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(17, 12);
+            this.label24.TabIndex = 25;
+            this.label24.Text = "右";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(8, 353);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(17, 12);
+            this.label25.TabIndex = 24;
+            this.label25.Text = "左";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(8, 416);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(100, 12);
+            this.label26.TabIndex = 23;
+            this.label26.Text = "垂直偏移校正(遠):";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(8, 340);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(100, 12);
+            this.label27.TabIndex = 21;
+            this.label27.Text = "水平偏移校正(遠):";
+            // 
+            // OffsetY2_Label
+            // 
+            this.OffsetY2_Label.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OffsetY2_Label.Location = new System.Drawing.Point(176, 242);
+            this.OffsetY2_Label.Name = "OffsetY2_Label";
+            this.OffsetY2_Label.Size = new System.Drawing.Size(100, 32);
+            this.OffsetY2_Label.TabIndex = 19;
+            this.OffsetY2_Label.Text = "0px";
+            this.OffsetY2_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // OffsetX2_Label
+            // 
+            this.OffsetX2_Label.BackColor = System.Drawing.Color.Transparent;
+            this.OffsetX2_Label.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OffsetX2_Label.Location = new System.Drawing.Point(176, 168);
+            this.OffsetX2_Label.Name = "OffsetX2_Label";
+            this.OffsetX2_Label.Size = new System.Drawing.Size(100, 32);
+            this.OffsetX2_Label.TabIndex = 18;
+            this.OffsetX2_Label.Text = "0px";
+            this.OffsetX2_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(422, 262);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(17, 12);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "下";
+            // 
+            // offsetY2_Control
+            // 
+            this.offsetY2_Control.Location = new System.Drawing.Point(10, 277);
+            this.offsetY2_Control.Maximum = 1000;
+            this.offsetY2_Control.Minimum = -1000;
+            this.offsetY2_Control.Name = "offsetY2_Control";
+            this.offsetY2_Control.Size = new System.Drawing.Size(431, 45);
+            this.offsetY2_Control.TabIndex = 12;
+            this.offsetY2_Control.Scroll += new System.EventHandler(this.offsetY2_Control_Scroll);
+            // 
+            // offsetX2_Control
+            // 
+            this.offsetX2_Control.Location = new System.Drawing.Point(8, 202);
+            this.offsetX2_Control.Maximum = 1000;
+            this.offsetX2_Control.Minimum = -1000;
+            this.offsetX2_Control.Name = "offsetX2_Control";
+            this.offsetX2_Control.Size = new System.Drawing.Size(431, 45);
+            this.offsetX2_Control.TabIndex = 10;
+            this.offsetX2_Control.Scroll += new System.EventHandler(this.offsetX2_Control_Scroll);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(8, 262);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(17, 12);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "上";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(422, 187);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(17, 12);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "右";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(8, 187);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(17, 12);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "左";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(8, 250);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(100, 12);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "垂直偏移校正(中):";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(8, 174);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(100, 12);
+            this.label19.TabIndex = 11;
+            this.label19.Text = "水平偏移校正(中):";
             // 
             // OffsetY_Label
             // 
@@ -423,231 +648,39 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "水平偏移校正(近):";
             // 
-            // BufferCount
+            // shapeContainer1
             // 
-            this.BufferCount.Location = new System.Drawing.Point(124, 132);
-            this.BufferCount.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.BufferCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.BufferCount.Name = "BufferCount";
-            this.BufferCount.Size = new System.Drawing.Size(120, 22);
-            this.BufferCount.TabIndex = 15;
-            this.BufferCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.BufferCount.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
+            this.shapeContainer1.Location = new System.Drawing.Point(3, 18);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2,
+            this.lineShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(439, 599);
+            this.shapeContainer1.TabIndex = 30;
+            this.shapeContainer1.TabStop = false;
             // 
-            // label11
+            // lineShape1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 134);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 12);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "數據緩衝次數:";
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 8;
+            this.lineShape1.X2 = 425;
+            this.lineShape1.Y1 = 149;
+            this.lineShape1.Y2 = 149;
             // 
-            // OffsetY2_Label
+            // lineShape2
             // 
-            this.OffsetY2_Label.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OffsetY2_Label.Location = new System.Drawing.Point(176, 227);
-            this.OffsetY2_Label.Name = "OffsetY2_Label";
-            this.OffsetY2_Label.Size = new System.Drawing.Size(100, 32);
-            this.OffsetY2_Label.TabIndex = 19;
-            this.OffsetY2_Label.Text = "0px";
-            this.OffsetY2_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // OffsetX2_Label
-            // 
-            this.OffsetX2_Label.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OffsetX2_Label.Location = new System.Drawing.Point(176, 152);
-            this.OffsetX2_Label.Name = "OffsetX2_Label";
-            this.OffsetX2_Label.Size = new System.Drawing.Size(100, 32);
-            this.OffsetX2_Label.TabIndex = 18;
-            this.OffsetX2_Label.Text = "0px";
-            this.OffsetX2_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(422, 247);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(17, 12);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "下";
-            // 
-            // offsetY2_Control
-            // 
-            this.offsetY2_Control.Location = new System.Drawing.Point(10, 262);
-            this.offsetY2_Control.Maximum = 1000;
-            this.offsetY2_Control.Minimum = -1000;
-            this.offsetY2_Control.Name = "offsetY2_Control";
-            this.offsetY2_Control.Size = new System.Drawing.Size(431, 45);
-            this.offsetY2_Control.TabIndex = 12;
-            this.offsetY2_Control.Scroll += new System.EventHandler(this.offsetY2_Control_Scroll);
-            // 
-            // offsetX2_Control
-            // 
-            this.offsetX2_Control.Location = new System.Drawing.Point(8, 187);
-            this.offsetX2_Control.Maximum = 1000;
-            this.offsetX2_Control.Minimum = -1000;
-            this.offsetX2_Control.Name = "offsetX2_Control";
-            this.offsetX2_Control.Size = new System.Drawing.Size(431, 45);
-            this.offsetX2_Control.TabIndex = 10;
-            this.offsetX2_Control.Scroll += new System.EventHandler(this.offsetX2_Control_Scroll);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(8, 247);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(17, 12);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "上";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(422, 172);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(17, 12);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "右";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(8, 172);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(17, 12);
-            this.label17.TabIndex = 14;
-            this.label17.Text = "左";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(8, 235);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(100, 12);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "垂直偏移校正(中):";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(8, 159);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(100, 12);
-            this.label19.TabIndex = 11;
-            this.label19.Text = "水平偏移校正(中):";
-            // 
-            // OffsetY3_Label
-            // 
-            this.OffsetY3_Label.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OffsetY3_Label.Location = new System.Drawing.Point(176, 378);
-            this.OffsetY3_Label.Name = "OffsetY3_Label";
-            this.OffsetY3_Label.Size = new System.Drawing.Size(100, 32);
-            this.OffsetY3_Label.TabIndex = 29;
-            this.OffsetY3_Label.Text = "0px";
-            this.OffsetY3_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // OffsetX3_Label
-            // 
-            this.OffsetX3_Label.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OffsetX3_Label.Location = new System.Drawing.Point(176, 303);
-            this.OffsetX3_Label.Name = "OffsetX3_Label";
-            this.OffsetX3_Label.Size = new System.Drawing.Size(100, 32);
-            this.OffsetX3_Label.TabIndex = 28;
-            this.OffsetX3_Label.Text = "0px";
-            this.OffsetX3_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(422, 398);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(17, 12);
-            this.label22.TabIndex = 27;
-            this.label22.Text = "下";
-            // 
-            // offsetY3_Control
-            // 
-            this.offsetY3_Control.Location = new System.Drawing.Point(10, 413);
-            this.offsetY3_Control.Maximum = 1000;
-            this.offsetY3_Control.Minimum = -1000;
-            this.offsetY3_Control.Name = "offsetY3_Control";
-            this.offsetY3_Control.Size = new System.Drawing.Size(431, 45);
-            this.offsetY3_Control.TabIndex = 22;
-            this.offsetY3_Control.Scroll += new System.EventHandler(this.offsetY3_Control_Scroll);
-            // 
-            // offsetX3_Control
-            // 
-            this.offsetX3_Control.Location = new System.Drawing.Point(8, 338);
-            this.offsetX3_Control.Maximum = 1000;
-            this.offsetX3_Control.Minimum = -1000;
-            this.offsetX3_Control.Name = "offsetX3_Control";
-            this.offsetX3_Control.Size = new System.Drawing.Size(431, 45);
-            this.offsetX3_Control.TabIndex = 20;
-            this.offsetX3_Control.Scroll += new System.EventHandler(this.offsetX3_Control_Scroll);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(8, 398);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(17, 12);
-            this.label23.TabIndex = 26;
-            this.label23.Text = "上";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(422, 323);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(17, 12);
-            this.label24.TabIndex = 25;
-            this.label24.Text = "右";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(8, 323);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(17, 12);
-            this.label25.TabIndex = 24;
-            this.label25.Text = "左";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(8, 386);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(100, 12);
-            this.label26.TabIndex = 23;
-            this.label26.Text = "垂直偏移校正(遠):";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(8, 310);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(100, 12);
-            this.label27.TabIndex = 21;
-            this.label27.Text = "水平偏移校正(遠):";
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 9;
+            this.lineShape2.X2 = 426;
+            this.lineShape2.Y1 = 306;
+            this.lineShape2.Y2 = 306;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 492);
+            this.ClientSize = new System.Drawing.Size(830, 644);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -655,6 +688,7 @@
             this.Text = "虛擬觸控板";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BufferCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinY)).EndInit();
@@ -663,13 +697,12 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.offsetY_Control)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.offsetX_Control)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BufferCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.offsetY2_Control)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.offsetX2_Control)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetY3_Control)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetX3_Control)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offsetY2_Control)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offsetX2_Control)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offsetY_Control)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offsetX_Control)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -723,6 +756,9 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
     }
 }
 
