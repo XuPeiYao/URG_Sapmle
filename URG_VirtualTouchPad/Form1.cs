@@ -130,16 +130,37 @@ namespace URG_VirtualTouchPad {
                 buffer++;
                 try {
                     var rawDistanceValues = hokuyo.GetData();
-                    var rawPoints = rawDistanceValues
-                            .Skip(128 - 44).Take(384 - 128)
-                            .Select((x, i) => new {
-                                degree = i * ((Math.PI / 2) / (384 - 128)),
-                                distance = x
-                            })
-                            .Select(x => GetPoint(x.degree, x.distance))
-                            .Where(x =>
-                                x.x >= decimal.ToInt32(MinX.Value) && x.x <= decimal.ToInt32(MaxX.Value) &&
-                                x.y >= decimal.ToInt32(MinY.Value) && x.y <= decimal.ToInt32(MaxY.Value));
+
+                    IEnumerable<(double x, double y)> rawPoints = null;
+                    LocationEnum locationType = LocationEnum.LeftBottom;
+                    this.Invoke((MethodInvoker)delegate () {
+                        locationType = (LocationEnum)location.SelectedIndex;
+                    });
+
+                    if (locationType == (int)LocationEnum.LeftBottom) {
+                        rawPoints = rawDistanceValues
+                                .Skip(128 - 44).Take(384 - 128)
+                                .Select((x, i) => new {
+                                    degree = i * ((Math.PI / 2) / (384 - 128)),
+                                    distance = x
+                                })
+                                .Select(x => GetPoint(x.degree, x.distance))
+                                .Where(x =>
+                                    x.x >= decimal.ToInt32(MinX.Value) && x.x <= decimal.ToInt32(MaxX.Value) &&
+                                    x.y >= decimal.ToInt32(MinY.Value) && x.y <= decimal.ToInt32(MaxY.Value));
+                    } else if (locationType == LocationEnum.RightBottom) {
+                        rawPoints = rawDistanceValues
+                                .Skip(128 - 44 + 384 - 128).Take(384 - 128)
+                                .Select((x, i) => new {
+                                    degree = i * ((Math.PI / 2) / (384 - 128)) + (Math.PI / 2),
+                                    distance = x
+                                })
+                                .Select(x => GetPoint(x.degree, x.distance))
+                                .Where(x =>
+                                    x.x >= -decimal.ToInt32(MinX.Value) && x.x <= -decimal.ToInt32(MaxX.Value) &&
+                                    x.y >= decimal.ToInt32(MinY.Value) && x.y <= decimal.ToInt32(MaxY.Value));
+                    }
+
 
                     var currentPoint = (
                         x: rawPoints.Sum(x => x.x) / rawPoints.Count(),
@@ -151,7 +172,7 @@ namespace URG_VirtualTouchPad {
                         continue;
                     }
 
-                    currentPoint = ConvertPosition(currentPoint);
+                    currentPoint = ConvertPosition(currentPoint, locationType);
                     bufferPosition.Add(currentPoint); // 加入緩衝
 
                     if (buffer % Convert.ToInt32(BufferCount.Value) == 0) {
@@ -239,8 +260,8 @@ namespace URG_VirtualTouchPad {
         /// </summary>
         /// <param name="point">原始座標</param>
         /// <returns>轉換座標</returns>
-        public (int x, int y) ConvertPosition((double x, double y) point) {
-            var dX = (screenWidth / decimal.ToDouble(MaxX.Value - MinX.Value));
+        public (int x, int y) ConvertPosition((double x, double y) point, LocationEnum locationType) {
+            var dX = (screenWidth / decimal.ToDouble(Math.Abs(MaxX.Value - MinX.Value)));
             var dY = (screenHeight / decimal.ToDouble(MaxY.Value - MinY.Value));
 
             int offsetX = 0, offsetY = 0;
@@ -285,11 +306,18 @@ namespace URG_VirtualTouchPad {
 
             var m = length / maxLength;
 
-
-
-            return (x: (int)(Math.Abs((point.x - decimal.ToDouble(MinX.Value)) * dX + off_X)),
-                y: screenHeight - (int)(Math.Abs((point.y - decimal.ToDouble(MinY.Value)) * dY - off_Y)));
+            if (locationType == LocationEnum.LeftBottom) {
+                return (x: (int)(Math.Abs((point.x - decimal.ToDouble(Math.Min(MinX.Value, MaxX.Value))) * dX + off_X)),
+                    y: screenHeight - (int)(Math.Abs((point.y - decimal.ToDouble(MinY.Value)) * dY - off_Y)));
+            } else if (locationType == LocationEnum.RightBottom) {
+                return (x: screenWidth - (int)(Math.Abs((point.x - decimal.ToDouble(Math.Min(MinX.Value, MaxX.Value))) * dX + off_X)),
+                    y: screenHeight - (int)(Math.Abs((point.y - decimal.ToDouble(MinY.Value)) * dY - off_Y)));
+            }
+            return default((int x, int y));
         }
 
+        private void Form1_Load(object sender, EventArgs e) {
+            location.SelectedIndex = 0;
+        }
     }
 }

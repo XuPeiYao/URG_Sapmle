@@ -73,6 +73,8 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.location = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BufferCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxX)).BeginInit();
@@ -91,6 +93,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.location);
             this.groupBox1.Controls.Add(this.BufferCount);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.StartButton);
@@ -104,7 +108,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 166);
+            this.groupBox1.Size = new System.Drawing.Size(355, 186);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "環境設定";
@@ -145,7 +149,7 @@
             // 
             this.StartButton.Location = new System.Drawing.Point(250, 21);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(99, 105);
+            this.StartButton.Size = new System.Drawing.Size(99, 159);
             this.StartButton.TabIndex = 13;
             this.StartButton.Text = "開始";
             this.StartButton.UseVisualStyleBackColor = true;
@@ -285,7 +289,7 @@
             this.groupBox2.Controls.Add(this.Log);
             this.groupBox2.Controls.Add(this.BindMouseButton);
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(12, 193);
+            this.groupBox2.Location = new System.Drawing.Point(12, 221);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(355, 287);
             this.groupBox2.TabIndex = 1;
@@ -360,7 +364,7 @@
             this.groupBox3.Enabled = false;
             this.groupBox3.Location = new System.Drawing.Point(373, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(445, 620);
+            this.groupBox3.Size = new System.Drawing.Size(445, 496);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "誤差校正";
@@ -656,7 +660,7 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(439, 599);
+            this.shapeContainer1.Size = new System.Drawing.Size(439, 475);
             this.shapeContainer1.TabIndex = 30;
             this.shapeContainer1.TabStop = false;
             // 
@@ -676,6 +680,27 @@
             this.lineShape2.Y1 = 306;
             this.lineShape2.Y2 = 306;
             // 
+            // location
+            // 
+            this.location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.location.FormattingEnabled = true;
+            this.location.Items.AddRange(new object[] {
+            "螢幕左下方",
+            "螢幕右下方"});
+            this.location.Location = new System.Drawing.Point(124, 160);
+            this.location.Name = "location";
+            this.location.Size = new System.Drawing.Size(121, 20);
+            this.location.TabIndex = 16;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 163);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 12);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "感應器位置:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -686,6 +711,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "虛擬觸控板";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BufferCount)).EndInit();
@@ -759,6 +785,8 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox location;
     }
 }
 
