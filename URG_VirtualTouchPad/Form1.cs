@@ -319,5 +319,13 @@ namespace URG_VirtualTouchPad {
         private void Form1_Load(object sender, EventArgs e) {
             location.SelectedIndex = 0;
         }
+
+        private void location_SelectedIndexChanged(object sender, EventArgs e) {
+            if (location.SelectedIndex == 0) {
+                pictureBox1.Image = Resource.Left;
+            } else if (location.SelectedIndex == 1) {
+                pictureBox1.Image = Resource.Right;
+            }
+        }
     }
 }

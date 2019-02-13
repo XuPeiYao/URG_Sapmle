@@ -24,6 +24,8 @@
         /// </summary>
         private void InitializeComponent() {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.location = new System.Windows.Forms.ComboBox();
             this.BufferCount = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.StartButton = new System.Windows.Forms.Button();
@@ -71,10 +73,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.location = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BufferCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxX)).BeginInit();
@@ -89,10 +90,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.offsetX2_Control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetY_Control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetX_Control)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.location);
             this.groupBox1.Controls.Add(this.BufferCount);
@@ -108,14 +111,36 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 186);
+            this.groupBox1.Size = new System.Drawing.Size(355, 396);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "環境設定";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 163);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 12);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "感應器位置:";
+            // 
+            // location
+            // 
+            this.location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.location.FormattingEnabled = true;
+            this.location.Items.AddRange(new object[] {
+            "螢幕左下方",
+            "螢幕右下方"});
+            this.location.Location = new System.Drawing.Point(138, 160);
+            this.location.Name = "location";
+            this.location.Size = new System.Drawing.Size(107, 20);
+            this.location.TabIndex = 16;
+            this.location.SelectedIndexChanged += new System.EventHandler(this.location_SelectedIndexChanged);
+            // 
             // BufferCount
             // 
-            this.BufferCount.Location = new System.Drawing.Point(124, 132);
+            this.BufferCount.Location = new System.Drawing.Point(138, 132);
             this.BufferCount.Maximum = new decimal(new int[] {
             5,
             0,
@@ -127,7 +152,7 @@
             0,
             0});
             this.BufferCount.Name = "BufferCount";
-            this.BufferCount.Size = new System.Drawing.Size(120, 22);
+            this.BufferCount.Size = new System.Drawing.Size(106, 22);
             this.BufferCount.TabIndex = 15;
             this.BufferCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.BufferCount.Value = new decimal(new int[] {
@@ -157,7 +182,7 @@
             // 
             // MaxX
             // 
-            this.MaxX.Location = new System.Drawing.Point(124, 104);
+            this.MaxX.Location = new System.Drawing.Point(138, 77);
             this.MaxX.Maximum = new decimal(new int[] {
             6000,
             0,
@@ -169,8 +194,8 @@
             0,
             0});
             this.MaxX.Name = "MaxX";
-            this.MaxX.Size = new System.Drawing.Size(120, 22);
-            this.MaxX.TabIndex = 12;
+            this.MaxX.Size = new System.Drawing.Size(106, 22);
+            this.MaxX.TabIndex = 11;
             this.MaxX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.MaxX.Value = new decimal(new int[] {
             500,
@@ -180,7 +205,7 @@
             // 
             // MinX
             // 
-            this.MinX.Location = new System.Drawing.Point(124, 77);
+            this.MinX.Location = new System.Drawing.Point(138, 106);
             this.MinX.Maximum = new decimal(new int[] {
             6000,
             0,
@@ -192,8 +217,8 @@
             0,
             0});
             this.MinX.Name = "MinX";
-            this.MinX.Size = new System.Drawing.Size(120, 22);
-            this.MinX.TabIndex = 11;
+            this.MinX.Size = new System.Drawing.Size(106, 22);
+            this.MinX.TabIndex = 12;
             this.MinX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.MinX.Value = new decimal(new int[] {
             50,
@@ -203,7 +228,7 @@
             // 
             // MinY
             // 
-            this.MinY.Location = new System.Drawing.Point(124, 49);
+            this.MinY.Location = new System.Drawing.Point(138, 49);
             this.MinY.Maximum = new decimal(new int[] {
             6000,
             0,
@@ -215,7 +240,7 @@
             0,
             0});
             this.MinY.Name = "MinY";
-            this.MinY.Size = new System.Drawing.Size(120, 22);
+            this.MinY.Size = new System.Drawing.Size(106, 22);
             this.MinY.TabIndex = 10;
             this.MinY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.MinY.Value = new decimal(new int[] {
@@ -226,7 +251,7 @@
             // 
             // MaxY
             // 
-            this.MaxY.Location = new System.Drawing.Point(124, 21);
+            this.MaxY.Location = new System.Drawing.Point(138, 21);
             this.MaxY.Maximum = new decimal(new int[] {
             6000,
             0,
@@ -238,7 +263,7 @@
             0,
             0});
             this.MaxY.Name = "MaxY";
-            this.MaxY.Size = new System.Drawing.Size(120, 22);
+            this.MaxY.Size = new System.Drawing.Size(106, 22);
             this.MaxY.TabIndex = 9;
             this.MaxY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.MaxY.Value = new decimal(new int[] {
@@ -250,38 +275,38 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 106);
+            this.label4.Location = new System.Drawing.Point(6, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 12);
+            this.label4.Size = new System.Drawing.Size(126, 12);
             this.label4.TabIndex = 3;
-            this.label4.Text = "螢幕右邊距離(毫米):";
+            this.label4.Text = "C. 螢幕右邊距離(毫米):";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 79);
+            this.label3.Location = new System.Drawing.Point(6, 108);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 12);
+            this.label3.Size = new System.Drawing.Size(126, 12);
             this.label3.TabIndex = 2;
-            this.label3.Text = "螢幕左邊偏移(毫米):";
+            this.label3.Text = "D. 螢幕左邊偏移(毫米):";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 12);
+            this.label2.Size = new System.Drawing.Size(126, 12);
             this.label2.TabIndex = 1;
-            this.label2.Text = "螢幕底端高度(毫米):";
+            this.label2.Text = "B. 螢幕底端高度(毫米):";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 12);
+            this.label1.Size = new System.Drawing.Size(126, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "螢幕頂端高度(毫米):";
+            this.label1.Text = "A. 螢幕頂端高度(毫米):";
             // 
             // groupBox2
             // 
@@ -289,9 +314,9 @@
             this.groupBox2.Controls.Add(this.Log);
             this.groupBox2.Controls.Add(this.BindMouseButton);
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(12, 221);
+            this.groupBox2.Location = new System.Drawing.Point(12, 414);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(355, 287);
+            this.groupBox2.Size = new System.Drawing.Size(355, 192);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "運行資訊";
@@ -315,7 +340,7 @@
             this.Log.Name = "Log";
             this.Log.ReadOnly = true;
             this.Log.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.Log.Size = new System.Drawing.Size(330, 220);
+            this.Log.Size = new System.Drawing.Size(341, 128);
             this.Log.TabIndex = 1;
             // 
             // BindMouseButton
@@ -664,14 +689,6 @@
             this.shapeContainer1.TabIndex = 30;
             this.shapeContainer1.TabStop = false;
             // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 8;
-            this.lineShape1.X2 = 425;
-            this.lineShape1.Y1 = 149;
-            this.lineShape1.Y2 = 149;
-            // 
             // lineShape2
             // 
             this.lineShape2.Name = "lineShape2";
@@ -680,32 +697,29 @@
             this.lineShape2.Y1 = 306;
             this.lineShape2.Y2 = 306;
             // 
-            // location
+            // lineShape1
             // 
-            this.location.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.location.FormattingEnabled = true;
-            this.location.Items.AddRange(new object[] {
-            "螢幕左下方",
-            "螢幕右下方"});
-            this.location.Location = new System.Drawing.Point(124, 160);
-            this.location.Name = "location";
-            this.location.Size = new System.Drawing.Size(121, 20);
-            this.location.TabIndex = 16;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 8;
+            this.lineShape1.X2 = 425;
+            this.lineShape1.Y1 = 149;
+            this.lineShape1.Y2 = 149;
             // 
-            // label12
+            // pictureBox1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 163);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 12);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "感應器位置:";
+            this.pictureBox1.Image = global::URG_VirtualTouchPad.Resource.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 186);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(343, 204);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 644);
+            this.ClientSize = new System.Drawing.Size(830, 613);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -729,6 +743,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.offsetX2_Control)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetY_Control)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetX_Control)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -787,6 +802,7 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox location;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
