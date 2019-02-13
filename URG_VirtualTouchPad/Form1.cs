@@ -157,7 +157,7 @@ namespace URG_VirtualTouchPad {
                                 })
                                 .Select(x => GetPoint(x.degree, x.distance))
                                 .Where(x =>
-                                    x.x >= -decimal.ToInt32(MinX.Value) && x.x <= -decimal.ToInt32(MaxX.Value) &&
+                                    x.x <= -decimal.ToInt32(MinX.Value) && x.x >= -decimal.ToInt32(MaxX.Value) &&
                                     x.y >= decimal.ToInt32(MinY.Value) && x.y <= decimal.ToInt32(MaxY.Value));
                     }
 
