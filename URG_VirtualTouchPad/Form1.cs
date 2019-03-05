@@ -81,13 +81,15 @@ namespace URG_VirtualTouchPad {
         }
 
         public void WriteLog(string text) {
-            this.Invoke((MethodInvoker)delegate () {
-                Log.Text += text + Environment.NewLine;
+            if (EnableLog.Checked) {
+                this.Invoke((MethodInvoker)delegate () {
+                    Log.Text += text + Environment.NewLine;
 
 
-                Log.SelectionStart = Log.TextLength;
-                Log.ScrollToCaret();
-            });
+                    Log.SelectionStart = Log.TextLength;
+                    Log.ScrollToCaret();
+                });
+            }
         }
 
         private void BindMouseButton_Click(object sender, EventArgs e) {
@@ -326,6 +328,10 @@ namespace URG_VirtualTouchPad {
             } else if (location.SelectedIndex == 1) {
                 pictureBox1.Image = Resource.Right;
             }
+        }
+
+        private void AutoClickCheckBox_CheckedChanged(object sender, EventArgs e) {
+
         }
     }
 }

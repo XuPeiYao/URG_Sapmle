@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.location = new System.Windows.Forms.ComboBox();
             this.BufferCount = new System.Windows.Forms.NumericUpDown();
@@ -75,8 +76,9 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.EnableLog = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BufferCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinX)).BeginInit();
@@ -90,7 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.offsetX2_Control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetY_Control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetX_Control)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -115,6 +116,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "環境設定";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::URG_VirtualTouchPad.Resource.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 186);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(343, 204);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // label12
             // 
@@ -310,6 +321,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.EnableLog);
             this.groupBox2.Controls.Add(this.AutoClickCheckBox);
             this.groupBox2.Controls.Add(this.Log);
             this.groupBox2.Controls.Add(this.BindMouseButton);
@@ -326,21 +338,22 @@
             this.AutoClickCheckBox.AutoSize = true;
             this.AutoClickCheckBox.Checked = true;
             this.AutoClickCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.AutoClickCheckBox.Location = new System.Drawing.Point(266, 29);
+            this.AutoClickCheckBox.Location = new System.Drawing.Point(266, 21);
             this.AutoClickCheckBox.Name = "AutoClickCheckBox";
             this.AutoClickCheckBox.Size = new System.Drawing.Size(72, 16);
             this.AutoClickCheckBox.TabIndex = 2;
             this.AutoClickCheckBox.Text = "自動點擊";
             this.AutoClickCheckBox.UseVisualStyleBackColor = true;
+            this.AutoClickCheckBox.CheckedChanged += new System.EventHandler(this.AutoClickCheckBox_CheckedChanged);
             // 
             // Log
             // 
-            this.Log.Location = new System.Drawing.Point(8, 57);
+            this.Log.Location = new System.Drawing.Point(8, 65);
             this.Log.Multiline = true;
             this.Log.Name = "Log";
             this.Log.ReadOnly = true;
             this.Log.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.Log.Size = new System.Drawing.Size(341, 128);
+            this.Log.Size = new System.Drawing.Size(341, 120);
             this.Log.TabIndex = 1;
             // 
             // BindMouseButton
@@ -705,15 +718,17 @@
             this.lineShape1.Y1 = 149;
             this.lineShape1.Y2 = 149;
             // 
-            // pictureBox1
+            // EnableLog
             // 
-            this.pictureBox1.Image = global::URG_VirtualTouchPad.Resource.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 186);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(343, 204);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.EnableLog.AutoSize = true;
+            this.EnableLog.Checked = true;
+            this.EnableLog.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.EnableLog.Location = new System.Drawing.Point(266, 43);
+            this.EnableLog.Name = "EnableLog";
+            this.EnableLog.Size = new System.Drawing.Size(67, 16);
+            this.EnableLog.TabIndex = 3;
+            this.EnableLog.Text = "啟用Log";
+            this.EnableLog.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -728,6 +743,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BufferCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinX)).EndInit();
@@ -743,7 +759,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.offsetX2_Control)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetY_Control)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetX_Control)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -803,6 +818,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox location;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox EnableLog;
     }
 }
 
